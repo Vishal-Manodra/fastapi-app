@@ -22,5 +22,4 @@ A simple REST API built with FastAPI and Python.
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/Vishal-Manodra/fastapi-app
