@@ -28,3 +28,16 @@ def get_item(item_id:int)->Items:
     else:
         raise HTTPException(status_code=404, detail=f"Item {item_id} not found")
     
+@app.delete("/items/{item_id}")
+def delete_item(item_id: int):
+    if item_id < len(items):
+        deleted = items.pop(item_id)
+        return deleted
+    raise HTTPException(status_code=404, detail="Item not found")
+
+@app.put("/items/{item_id}")
+def update_item(item_id: int, updated_item: Items):
+    if item_id < len(items):
+        items[item_id] = updated_item
+        return updated_item
+    raise HTTPException(status_code=404, detail="Item not found")
